@@ -39,16 +39,18 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    text-transform: capitalize;
+    text-transform: capitalize; /*to capitalize the first letter of all the todos*/
     background-color: rgba(0,0,0,.6);
     border-radius: 10px;
     margin: 8px;
 }
 
+/* hover properties of todos container */
 .todoscontainer:hover{
     background-color: rgba(0,0,0,.3);
 }
 
+/*--------------------------left and right part of the todos--------------------------------------*/
 .todoleft{
     display: flex;
     flex-wrap: wrap;
@@ -100,3 +102,5 @@ body{
     padding: 8px;
     border-radius: 5px;
 }
+
+/*--------------------------------------buttons complete------------------------------------------------*/
