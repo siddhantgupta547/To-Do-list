@@ -1,0 +1,106 @@
+body{
+    margin: 0;
+    /* background: #333333;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to right, #dd1818, #333333);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to right, #dd1818, #333333); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
+    background: #085078;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #85D8CE, #085078);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #85D8CE, #085078); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Signika', sans-serif;
+    color: white;
+}
+
+#container{
+    margin:auto;
+    width: 50%;
+    border: 2px solid #085078;
+    margin-top: 30px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 1px 1px 2px #85D8CE;
+}
+
+#typeanddate{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;    
+}
+
+.typeanddateplacement{
+
+    display: inline-block;
+    width: 49%;
+}
+
+#buttons{
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.todoscontainer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-transform: capitalize;
+    background-color: rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+.todoscontainer:hover{
+    background-color: rgba(0,0,0,.3);
+}
+
+.todoleft{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tododesc{
+    margin-bottom: -15px;
+}
+
+/* .todoleftcheckboxarrangement{
+    display: flex;
+    flex-wrap: wrap;
+} */
+
+.todoleftarrangement{
+    margin-left: 8px;
+}
+
+.todoright{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0 10px 0 10px;
+}
+
+
+.inputcss{
+    width: 99%;
+    background: transparent;
+    border: none;
+    color: #085078;
+}
+
+#desccss{
+    height: 40px;
+}
+
+#buttons{
+    padding: 30px;
+}
+
+
+
+.buton{
+    border: none;
+    background-color: white;
+    color: #085078;
+    padding: 8px;
+    border-radius: 5px;
+}
+

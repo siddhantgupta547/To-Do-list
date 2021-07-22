@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title><%=title%></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='index.css'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika:wght@500&display=swap" rel="stylesheet"> 
+    <!-- <script src='main.js'></script> -->
+</head>
+<body>
+    <div id="container">
+        <div id="form">
+            <form action="/add" method="POST">
+                <h1 style="text-align: center;">To-Do List</h1>
+                <div id="desc">
+                    <h5>Description</h5>
+                    <input type="text" id="desccss" class="inputcss" name="desc" placeholder="Add an Activity" required>
+                </div>
+                <div id="typeanddate">
+                    <div id="typeanddateleft" class="typeanddateplacement">
+                        <h5>Category</h5> 
+                        <select name="type" class="inputcss" required>
+                            <option value="">Please choose a category</option>
+                            <option value="personal">Personal</option>
+                            <option value="work">Work</option>
+                            <option value="home">Home</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div id="typeanddateright" class="typeanddateplacement">
+                        <h5>Pick a Date</h5>
+                        <input type="date" class="inputcss" name="when" placeholder="dd/mm/yyyy" required>
+                    </div>
+                </div>
+                <div id="buttons">
+                    <button type="submit" class="buton">Add Task</button>
+                    <input type="button" class="buton" id="delete" value="Delete Task" />
+                </div>
+                <div id="todos">
+                    <% for(let i of todos){%>
+                        <div class="todoscontainer">
+                            <div class="todoleft">
+                                <div class="todoleftcheckboxarrangement">
+                                    <input type="checkbox" id="<%=i._id%>">
+                                </div>
+                                <div class="todoleftarrangement">
+                                    <div class="tododesc">
+                                        <p><%=i.desc%></p>
+                                    </div>
+                                    <div class="tododate">
+                                        <h5><%=i.date.toDateString()%></h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="todoright">
+                                <div class="todotype">
+                                    <%=i.category%>
+                                </div>
+                            </div>
+                        </div>
+                    <%}%>
+                </div>
+                <!-- <table>
+                    <tr>
+                        <th>
+                            Description
+                        </th>
+                        <td>
+                            <input type="text" name="desc" placeholder="Add an Activity">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Category
+                        </th>
+                        <td>
+                            <select>
+                                <option value="">Please choose a category</option>
+                                <option value="personal">Personal</option>
+                                <option value="work">Work</option>
+                                <option value="home">Home</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                        <th>
+                            Pick a Date
+                        </th>
+                        <td>
+                            <input type="date" name="when" placeholder="dd/mm/yyyy">
+                        </td>
+                    </tr>
+                </table> -->
+            </form>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // $('input[type=checkbox]').click(function(){
+        //     if($( "input:checked" ).lenght>=1)
+        //     {
+        //         $("#delete").removeAttr('disabled');
+        //     }
+        //     else{
+        //         $("#delete").attr('disabled','true');
+        //     }
+        // })
+        $("#delete").click(function(){
+            var len=$( "input:checked" );
+            // console.log(len[0].id);
+            let url='/delete?id=';
+            for(let i=0;i<len.length;i++)
+            {
+                if(i==0){
+                    url= url + len[i].id;
+                }
+                else{
+                    url= url + '&id=' + len[i].id;
+                }
+            }
+            
+            window.location.href=url;
+            console.log(url);
+        })
+    </script>
+</body>
+</html>
